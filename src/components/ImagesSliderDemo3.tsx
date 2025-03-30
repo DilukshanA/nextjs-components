@@ -13,7 +13,7 @@ export function ImagesSliderDemo3() {
             <div className='flex flex-col lg:flex-row h-full  text-white w-full mt-10 lg:mt-20 px-3 sm:px-10 lg:px-20 xl:px-40 lg:gap-20'>
                 {/* left content - image slider */}
                 <div className='flex flex-col items-center justify-center lg:w-1/2 '>
-                    <h1 className="block text-xl lg:text-2xl lg:hidden font-semibold mb-6">Mannar</h1>
+                    <h1 className="block text-xl lg:text-2xl lg:hidden font-semibold mb-6">Lorem Ipsum</h1>
                     <ImagesSlider className="w-full aspect-square sm:w-96 lg:w-full" images={images} overlay={false} showArrows={true}>
                         <motion.div
                             initial={{
