@@ -1,7 +1,9 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 export const ImagesSlider = ({
   images,
@@ -11,6 +13,7 @@ export const ImagesSlider = ({
   className,
   autoplay = true,
   direction = "up",
+  showArrows = false, // New prop to control arrows visibility
 }: {
   images: string[];
   children: React.ReactNode;
@@ -19,6 +22,7 @@ export const ImagesSlider = ({
   className?: string;
   autoplay?: boolean;
   direction?: "up" | "down";
+  showArrows?: boolean; // Prop to enable/disable arrows
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -58,6 +62,7 @@ export const ImagesSlider = ({
       })
       .catch((error) => console.error("Failed to load images", error));
   };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
@@ -69,7 +74,6 @@ export const ImagesSlider = ({
 
     window.addEventListener("keydown", handleKeyDown);
 
-    // autoplay
     let interval: any;
     if (autoplay) {
       interval = setInterval(() => {
@@ -126,11 +130,29 @@ export const ImagesSlider = ({
         perspective: "1000px",
       }}
     >
+      {/* Left Arrow Button (only if showArrows is true) */}
+      {showArrows && (
+        <button
+          onClick={handlePrevious}
+          className="absolute left-4 z-50 text-white bg-black/5 hover:bg-black/30 p-2 rounded-full transition"
+        >
+          <IoIosArrowBack />
+        </button>
+      )}
+
+      {/* Right Arrow Button (only if showArrows is true) */}
+      {showArrows && (
+        <button
+          onClick={handleNext}
+          className="absolute right-4 z-50 text-white bg-black/5 hover:bg-black/30 p-2 rounded-full transition"
+        >
+          <IoIosArrowForward />
+        </button>
+      )}
+
       {areImagesLoaded && children}
       {areImagesLoaded && overlay && (
-        <div
-          className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)}
-        />
+        <div className={cn("absolute inset-0 z-40 bg-black/60", overlayClassName)} />
       )}
 
       {areImagesLoaded && (
