@@ -7,6 +7,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
+      <div>
+        <button>Image Slider - 1</button>
+      </div>
       Next js components
       <ImagesSliderDemo/>
       <div className="my-10">
