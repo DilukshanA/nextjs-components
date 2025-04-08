@@ -1,6 +1,7 @@
 import { ImagesSliderDemo } from "@/components/ImagesSliderDemo";
 import { ImagesSliderDemo2 } from "@/components/ImagesSliderDemo2";
 import { ImagesSliderDemo3 } from "@/components/ImagesSliderDemo3";
+import { TailwindcssButtons } from "@/components/TailwindcssButtons";
 
 import Image from "next/image";
 
@@ -20,6 +21,9 @@ export default function Home() {
         <h1>Images Slider 3</h1>
       </div>
       <ImagesSliderDemo3/>
+      <div>
+        <TailwindcssButtons/>
+      </div>
     </div>
   );
 }

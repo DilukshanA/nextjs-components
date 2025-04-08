@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.1.1",
     "motion": "^12.6.3",
     "next": "15.2.4",
@@ -16,6 +17,7 @@
     "react-dom": "^19.0.0",
     "react-element-to-jsx-string": "^17.0.0",
     "react-icons": "^5.5.0",
+    "sonner": "^2.0.3",
     "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
