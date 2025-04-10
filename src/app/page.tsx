@@ -9,11 +9,6 @@ export default function Home() {
 
   return (
     <div>
-      <div className="my-10">
-        <h1>Images Slider 3</h1>
-      </div>
-      <ImagesSliderDemo3/>
-
       <div className="flex justify-center items-center">
       <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
         onClick={() => router.push('/images-slider-1')}>
